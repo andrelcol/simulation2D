@@ -1,4 +1,14 @@
 Repositório mais mió de bão de simulation2D, não tem nível técnico(ainda), mas tem vontade.
+
+# Rinobot Simulation 2D
+
+![Docs](https://github.com/andrelcol/simulation2D/actions/workflows/docs.yml/badge.svg)
+![Build](https://github.com/andrelcol/simulation2D/actions/workflows/build.yml/badge.svg)
+![Docs Pages](https://github.com/andrelcol/simulation2D/actions/workflows/docs-pages.yml/badge.svg)
+
+Repositório oficial da equipe Simulation 2D da Rinobot.
+
+
 - Servidor: RCSSServer 18.0.0
 - Monitor: RCSSMonitor 18.1.x
 - Código do time: `starter-stack/`
