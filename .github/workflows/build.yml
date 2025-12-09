@@ -1,0 +1,44 @@
+name: Build Simulation2D Team
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential g++ \
+            libboost-all-dev \
+            autoconf automake libtool \
+            libaudio-dev libgtk-3-dev libxt-dev \
+            bison flex \
+            qtbase5-dev qttools5-dev-tools
+
+      - name: Prepare Lib (StarterLibRCSC)
+        run: |
+          cd starter-stack
+          # remove Lib "placeholder" e clona a lib real
+          rm -rf Lib
+          git clone https://github.com/naderzare/StarterLibRCSC.git Lib
+
+      - name: Build team (starter-stack)
+        run: |
+          cd starter-stack
+          chmod +x makeFirstTime.sh
+          ./makeFirstTime.sh
+
